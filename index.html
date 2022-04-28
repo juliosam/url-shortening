@@ -21,10 +21,12 @@
         <li class="navbar__menu-item"><a href="#">Resources</a></li>
       </ul>
     </div>
-    <ul class="navbar__account">
-      <li class="navbar__menu-item"><a href="#">Login</a></li>
-      <li class="navbar__menu-item"><a href="#">Sign Up</a></li>
-    </ul>
+    <div class="navbar-internal-container">
+      <ul class="navbar__account">
+        <li class="navbar__menu-item"><a href="#">Login</a></li>
+        <li class="navbar__menu-item navbar__menu-item_special"><a href="#">Sign Up</a></li>
+      </ul>
+    </div>
   </nav>
 
   <div class="start">
@@ -34,35 +36,41 @@
       on how your links are performing.</p>
     <button class="start__btn">Get Started</button>
   </div>
+
   <div class="shortener">
     <input class="shortener__input" placeholder="Shorten a link here..." type="url">
     <button class="shortener__btn">Shorten It!</button>
   </div>
 
   <div class="info">
-    <h2 class="info__title">Advanced Statistics</h2>
-    <p class="info__description">Track how your links are performing across the web with our 
-      advanced statistics dashboard.</p>
-    <div class="info__card info__card_1">
-      <img src="images/icon-brand-recognition.svg">
-      <h3 class="info__card-title">Brand Recognition</h3>
-      <p class="info__card-description">Boost your brand recognition with each click. Generic links don’t 
-        mean a thing. Branded links help instil confidence in your content.
-      </p>
+    <div class="info__text-container">
+      <h2 class="info__title">Advanced Statistics</h2>
+      <p class="info__description">Track how your links are performing across the web with our 
+        advanced statistics dashboard.</p>
     </div>
-    <div class="info__card info__card_2">
-      <img src="images/icon-detailed-records.svg">
-      <h3 class="info__card-title">Detailed Records</h3>
-      <p class="info__card-description">Gain insights into who is clicking your links. Knowing when and where 
-        people engage with your content helps inform better decisions.
-      </p>
-    </div>
-    <div class="info__card info__card_3">
-      <img src="images/icon-fully-customizable.svg">
-      <h3 class="info__card-title">Fully Customizable</h3>
-      <p class="info__card-description"> Improve brand awareness and content discoverability through customizable 
-        links, supercharging audience engagement.
-      </p>
+    <div class="info__card-container">
+      <div class="info__card-line"></div>
+      <div class="info__card info__card_1">
+        <div class="info__card-img"><img src="images/icon-brand-recognition.svg"></div>
+        <h3 class="info__card-title">Brand Recognition</h3>
+        <p class="info__card-description">Boost your brand recognition with each click. Generic links don’t 
+          mean a thing. Branded links help instil confidence in your content.
+        </p>
+      </div>
+      <div class="info__card info__card_2">
+        <div class="info__card-img"><img src="images/icon-detailed-records.svg"></div>
+        <h3 class="info__card-title">Detailed Records</h3>
+        <p class="info__card-description">Gain insights into who is clicking your links. Knowing when and where 
+          people engage with your content helps inform better decisions.
+        </p>
+      </div>
+      <div class="info__card info__card_3">
+        <div class="info__card-img"><img src="images/icon-fully-customizable.svg"></div>
+        <h3 class="info__card-title">Fully Customizable</h3>
+        <p class="info__card-description"> Improve brand awareness and content discoverability through customizable 
+          links, supercharging audience engagement.
+        </p>
+      </div>
     </div>
   </div>
   <div class="goUp">
@@ -70,39 +78,41 @@
     <button class="start__btn goUp__btn">Get Started</button>
   </div>
   <footer class="foot">
-    <img class="foot__logo"  src="images/logo.svg">
-    <div class="foot__menu">
-      <h4 class="foot__menu-title">Features</h4>
-      <ul class="foot__menu-list">
-        <li class="foot__menu-item"><a href="#">Link Shortening</a></li>
-        <li class="foot__menu-item"><a href="#">Branded Links</a></li>
-        <li class="foot__menu-item"><a href="#">Analytics</a></li>
-      </ul>
-    </div>
-    <div class="foot__menu">
-      <h4 class="foot__menu-title">Resources</h4>
-      <ul class="foot__menu-list">
-        <li class="foot__menu-item"><a href="#">LBlog</a></li>
-        <li class="foot__menu-item"><a href="#">Developers</a></li>
-        <li class="foot__menu-item"><a href="#">Support</a></li>
-      </ul>
-    </div>
-    <div class="foot__menu">
-      <h4 class="foot__menu-title">Company</h4>
-      <ul class="foot__menu-list">
-        <li class="foot__menu-item"><a href="#">About</a></li>
-        <li class="foot__menu-item"><a href="#">Our Team</a></li>
-        <li class="foot__menu-item"><a href="#">Careers</a></li>
-        <li class="foot__menu-item"><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="foot__social">
-      <ul class="foot__social-list">
-        <li class="foot__social-item"><a href="#"><img src="images/icon-facebook.svg"></a></li>
-        <li class="foot__social-item"><a href="#"><img src="images/icon-twitter.svg"></a></li>
-        <li class="foot__social-item"><a href="#"><img src="images/icon-pinterest.svg"></a></li>
-        <li class="foot__social-item"><a href="#"><img src="images/icon-instagram.svg"></a></li>
-      </ul>
+    <img class="foot__logo"  src="images/logo-w.svg">
+    <div class="foot__no-logo-container">
+      <div class="foot__menu">
+        <h4 class="foot__menu-title">Features</h4>
+        <ul class="foot__menu-list">
+          <li class="foot__menu-item"><a href="#">Link Shortening</a></li>
+          <li class="foot__menu-item"><a href="#">Branded Links</a></li>
+          <li class="foot__menu-item"><a href="#">Analytics</a></li>
+        </ul>
+      </div>
+      <div class="foot__menu">
+        <h4 class="foot__menu-title">Resources</h4>
+        <ul class="foot__menu-list">
+          <li class="foot__menu-item"><a href="#">LBlog</a></li>
+          <li class="foot__menu-item"><a href="#">Developers</a></li>
+          <li class="foot__menu-item"><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div class="foot__menu">
+        <h4 class="foot__menu-title">Company</h4>
+        <ul class="foot__menu-list">
+          <li class="foot__menu-item"><a href="#">About</a></li>
+          <li class="foot__menu-item"><a href="#">Our Team</a></li>
+          <li class="foot__menu-item"><a href="#">Careers</a></li>
+          <li class="foot__menu-item"><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot__social">
+        <ul class="foot__social-list">
+          <li class="foot__social-item"><a href="#"><img src="images/icon-facebook.svg"></a></li>
+          <li class="foot__social-item"><a href="#"><img src="images/icon-twitter.svg"></a></li>
+          <li class="foot__social-item"><a href="#"><img src="images/icon-pinterest.svg"></a></li>
+          <li class="foot__social-item"><a href="#"><img src="images/icon-instagram.svg"></a></li>
+        </ul>
+      </div>
     </div>
   </footer>
   
