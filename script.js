@@ -1,6 +1,5 @@
 const shortener = document.querySelector('.shortener');
 const linkCards = document.querySelector('.links-shorted__list')
-const smallDirForm = document.querySelector('.smallDir-form')
 
 const arrayObjects = JSON.parse(localStorage.getItem('item')) || [];
 
@@ -14,7 +13,6 @@ const requestCard = function(e){
         .then(data => {
             const objDir = { bigDir, smallDir:data.result.short_link , copied: false};
             arrayObjects.push(objDir);
-            //localStorage.arrayObjects()     ME QUEDE AQUI
             this.reset();
             linkCards.innerHTML = arrayObjects.map((card, i)=>{
               return `
@@ -39,8 +37,8 @@ const localCards = function(){
         <li>
           <section>
               <span>${card.bigDir}</span>
-              <form >                             //class="smallDir-form"
-                <span >${card.smallDir}</span>
+              <form class="smallDir-form">                             
+                <span class="span-dir">${card.smallDir}</span>
                 <input type="submit" value= "Copy" >
               </form>
           </section>
@@ -48,13 +46,24 @@ const localCards = function(){
     `}).join('');
 }
 
-const copyLink = function(){
+const copyLink = function(e){
    e.preventDefault();
- console.log('copied')
+   if(e.target.className === 'smallDir-form'){
+     const littleLink = e.target.firstChild.nextElementSibling.innerHTML;
+     console.log(littleLink);
+
+     let inputElement = document.createElement('input');
+     inputElement.setAttribute('value', littleLink);
+     document.body.appendChild(inputElement);
+     inputElement.select();
+     document.execCommand("copy");
+     inputElement.parentNode.removeChild(inputElement);
+     e.target.lastChild.previousElementSibling.value = "Copied!"
+     e.target.lastChild.previousElementSibling.style.background = "rgb(8, 8, 63)";
+    }
  }
 
 shortener.addEventListener('submit',requestCard)
 window.addEventListener('load',localCards)
 
 linkCards.addEventListener('submit', copyLink)
-

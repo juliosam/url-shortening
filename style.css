@@ -201,8 +201,10 @@ body {
     font-weight: 700;
 }
 
-.links-shorted__list li section form input:focus {
-    background-color: blue;}
+.active {
+    background-color: rgb(8, 8, 63);
+}
+
 
 .info {
     background-color: rgb(234, 233, 236);
