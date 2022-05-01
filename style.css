@@ -71,6 +71,8 @@ body {
     margin-left: 20px;
 }
 
+.navbar__menu-item_special:hover{ background-color: rgb(40, 236, 236);}
+
 .navbar__menu-item_special a{
     color: white;
     padding-bottom: 2px;
@@ -120,6 +122,8 @@ body {
     cursor: pointer;
 }
 
+.start__btn:hover{background-color: rgb(40, 236, 236)}
+
 .links{
     width: 100%;
     min-height: 160px;
@@ -163,6 +167,9 @@ body {
     font-weight: 700;
     cursor: pointer;
 }
+
+.shortener__btn:hover{background-color: rgb(40, 236, 236);}
+.shortener__btn:active{background-color: rgb(8, 8, 63);}
 
 .links-shorted__list{
     padding: 90px 0 0 130px ;
@@ -210,6 +217,8 @@ body {
     font-weight: 700;
     cursor: pointer;
 }
+
+.links-shorted__list li section form input:hover {background-color:  rgb(40, 236, 236)}
 
 .active {
     background-color: rgb(8, 8, 63);
@@ -378,6 +387,9 @@ body {
         background-color: var(--Very-Dark-Blue);
         border-radius: 8px;
        }
+    
+    .burger-pressed{ display: flex;}
+
     .navbar__menu{
         width: 250px;
         margin: 30px 0 0px 0;

@@ -1,5 +1,7 @@
 const shortener = document.querySelector('.shortener');
-const linkCards = document.querySelector('.links-shorted__list')
+const linkCards = document.querySelector('.links-shorted__list');
+const menuMobile = document.querySelector('.navbar__menus-container');
+const burgerIcon = document.querySelector('.navbar__menu-icon');
 
 const arrayObjects = JSON.parse(localStorage.getItem('item')) || [];
 
@@ -67,3 +69,17 @@ shortener.addEventListener('submit',requestCard)
 window.addEventListener('load',localCards)
 
 linkCards.addEventListener('submit', copyLink)
+
+
+const movileMenuHandle = function(){
+
+  if(menuMobile.classList.contains('burger-pressed')){
+    menuMobile.classList.remove('burger-pressed')
+  }
+  
+  else {menuMobile.classList.add('burger-pressed')}
+
+}
+
+burgerIcon.addEventListener('click', movileMenuHandle)
+
