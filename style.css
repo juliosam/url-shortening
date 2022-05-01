@@ -6,9 +6,7 @@
   --Grayish-Violet: hsl(257, 7%, 63%);
   --Very-Dark-Blue: hsl(255, 11%, 22%);
   --Very-Dark-Violet: hsl(260, 8%, 14%);
-
 }
-
 
 *{ box-sizing: border-box; font-family: 'Poppins';}
 
@@ -22,7 +20,16 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 30px 130px 0 130px;
+}
+
+.navbar__logo{ width: 122px;}
+
+.navbar__menus-container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
 }
 
 .navbar-internal-container{
@@ -69,6 +76,8 @@ body {
     padding-bottom: 2px;
 }
 
+.navbar__menu-icon{display: none;}
+
 .start{
     width: 100%;
     height: 400px;
@@ -108,9 +117,9 @@ body {
     background-color: var(--Cyan);
     font-size: 17px ;
     font-weight: 700;
+    cursor: pointer;
 }
 
-/* HACE FALTA CREAR UN CONTENEDOR CON FONDO IGUAL A LA SECCION SIGUIENTE, PARA TENER ESPACIO PARA LAS TARJETAS */
 .links{
     width: 100%;
     min-height: 160px;
@@ -152,6 +161,7 @@ body {
     border: none;
     font-size: 19px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .links-shorted__list{
@@ -163,13 +173,12 @@ body {
 .links-shorted__list>* {
     background-color: white;
     width: calc(100% - 145px);
-    height: 65px;
+    min-height: 65px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
     margin-top: 16px;
-
 }
 
 .links-shorted__list li section { 
@@ -199,6 +208,7 @@ body {
     color: white;
     font-size: 15px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .active {
@@ -232,7 +242,6 @@ body {
     margin-top: 0;
     width: 490px;
     text-align: center;
-
 }
 
 .info__card-container{
@@ -319,21 +328,266 @@ body {
 
  .foot__logo{ margin-right: 40px;}
 
- .foot__no-logo-container{
-     width: 700px;
-     display: flex;
-    }
+ .foot__no-logo-container{ width: 700px;     display: flex;}
 
  .foot__menu{width: 25%;}
 
+ .foot__menu-title{ margin: 5px 0 15px 0;    color: white; }
+
+ .foot__menu-list{  margin: 0;               padding: 0; }
+
+ .foot__menu-item{ line-height: 30px;       display: block; }
+
+ .foot__menu-item a{ text-decoration: none;  color: white;}
+ 
+ .foot__social{ width: 25%;}
+
+ .foot__social-list{ 
+    padding: 0; 
+    margin: 8px; 
+    display: flex;
+ }
+
+ .foot__social-item{ 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+ }
+
+
+@media(max-width:1040px){
+
+    .main-container{
+        width: 375px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .navbar{ padding: 40px 25px 0 25px;}
+
+    .navbar__menus-container{
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 95px;
+        width: 325px;
+        background-color: var(--Very-Dark-Blue);
+        border-radius: 8px;
+       }
+    .navbar__menu{
+        width: 250px;
+        margin: 30px 0 0px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 20px 0;
+        border-bottom: 1px solid gray;
+       }
+
+    .navbar__account{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 20px 0 40px 0 ;
+       }
+
+    .navbar__menu-item{ margin: 12px 0 ;}
+    
+    .navbar__menu-item_special{ margin: 15px 0 0 0;    width: 250px;}
+
+    .navbar__menu-item a {color: white;         font-size: 18px;}
+
+    .navbar__menu-icon{  display: inline-block;}
+
+    .start{
+        height: 700px;
+        padding-left: 25px;
+        margin-bottom: 50px;
+        position: relative;
+    }
+    
+    .start__illustration{
+        width: 490px;
+        right: -140px;
+        top: -65px;
+    }
+
+    .start__slogan{
+        text-align: center;
+        font-size: 42px;
+        width: 325px;
+        padding: 310px 0 0 0;
+        margin-bottom: 10px;
+    }
+    
+    .start__description{
+        width: 325px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .start__btn{  text-align: center;     margin-left: 75px; }
+
+
+    .shortener{
+        top: 750px; 
+        left: 25px;
+        width: 325px;
+        height: 180px;
+        background: url(images/bg-shorten-mobile.svg), var(--Very-Dark-Blue);
+        flex-direction: column;
+    }
+
+    .shortener__input{
+        width: 280px;
+        height: 45px;
+        border-radius: 5px;
+        margin-bottom: 40px;
+    }
+    
+    .shortener__btn{
+        margin-left: 0px;
+        width: 280px;
+        height: 45px;
+        border-radius: 5px;
+    }
+    
+    .links-shorted__list{
+        padding: 90px 0 0 25px ;
+    }
+    
+    .links-shorted__list>* {
+        width: 325px;
+        min-height: 140px;
+        margin: 16px 0 0 0 ;
+    }
+    
+    .links-shorted__list li section { 
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        align-items: flex-start;
+    }
+
+    .links-shorted__list li section span { 
+        text-align: start;
+        width: 312px;
+        padding-left: 25px;
+        padding-bottom: 10px;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+    .links-shorted__list li section form{ 
+        display: flex;
+        flex-direction: column;
+        width: 325px;
+        padding-top: 10px;
+        border-top: 1px solid lightgray;
+    }
+
+    .links-shorted__list li section form input{ 
+        width: 285px;
+        margin-bottom: 10px;
+    }
+
+    .info {
+        padding: 60px 25px 40px 25px;
+    }
+
+    .info__title{
+    font-size: 28px;}
+
+    .info__description{
+        width: 325px;
+    }
+
+    .info__card-container{
+        flex-direction: column;
+    }
+
+    .info__card{
+        width: 325px;
+        padding: 45px 33px 23px 33px;
+    }
+/* ------------------------------------------------ */
+/* ------------------------------------------------ */
+    .info__card_1{margin-bottom: 80px;}
+    
+    .info__card_2{margin-top: 0px; margin-bottom: 80px;}
+    
+    .info__card_3{margin-top: 0px; margin-bottom: 40px;}
+    
+    .info__card-img{ left: 122px;
+    }
+    
+     .info__card-title{
+         text-align: center;
+        }
+    
+     .info__card-description{
+         font-size: 15px;
+         line-height: 26px;
+         text-align: center;
+     }
+    
+     .info__card-line{
+        width: 8px;
+        height: 500px;
+        top: 22%;
+        left: 158px;
+    }
+
+    .goUp{
+        height: 300px;
+        background: url(images/bg-boost-mobile.svg), var(--Very-Dark-Blue);
+        padding-top: 20px;
+    }
+
+    .goUp__title{
+        font-size: 28px;
+        margin-bottom: 14px;
+    }
+
+    .goUp__btn {
+        margin: 0;
+
+    }
+
+    .foot{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 25px ;
+    }
+
+    .foot__logo{ margin-right: 0px;}
+
+ .foot__no-logo-container{
+     width: 375px;
+     display: block;
+     text-align: center;
+    }
+
+ .foot__menu{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+}
+
  .foot__menu-title{
-     margin: 5px 0 15px 0;
-     color: white;
+     margin: 30px 0 8px 0;
  }
 
  .foot__menu-list{
-     margin: 0;
-     padding: 0;
+     margin: 6px 0;
  }
 
  .foot__menu-item{
@@ -344,17 +598,18 @@ body {
 
  .foot__menu-item a{
      text-decoration: none;
-     color: white;
+     color: rgb(190, 190, 190);
     }
  
 .foot__social{ 
-    width: 25%;
+    width: 100%
  }
 
 .foot__social-list{ 
     padding: 0; 
-    margin: 8px; 
+    margin: 50px 0 0 0; 
     display: flex;
+    justify-content: center;
 }
 
 .foot__social-item{ 
@@ -362,4 +617,6 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 10px;
+}
+
 }
