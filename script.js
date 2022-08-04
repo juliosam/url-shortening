@@ -5,33 +5,32 @@ const burgerIcon = document.querySelector('.navbar__menu-icon');
 
 const arrayObjects = JSON.parse(localStorage.getItem('item')) || [];
 
-
 const requestCard = function(e){ 
-    e.preventDefault();
-    const bigDir = (this.querySelector('[class=shortener__input]')).value;
+  e.preventDefault();
+  const bigDir = (this.querySelector('[class=shortener__input]')).value;
     
-         fetch(`https://api.shrtco.de/v2/shorten?url=${bigDir}`)
-        .then(res => res.json())
-        .then(data => {
-            const objDir = { bigDir, smallDir:data.result.short_link , copied: false};
-            arrayObjects.push(objDir);
-            this.reset();
-            linkCards.innerHTML = arrayObjects.map((card, i)=>{
-              return `
-                  <li>
-                    <section>
-                        <span>${card.bigDir}</span>
-                        <form class="smallDir-form">
-                          <span >${card.smallDir}</span>
-                          <input type="submit" value= "Copy" >
-                        </form>
-                    </section>
-                  </li>
-              `}).join('');
-              localStorage.setItem("item",JSON.stringify(arrayObjects))
-          })
-          console.log(arrayObjects)
-        } 
+   fetch(`https://api.shrtco.de/v2/shorten?url=${bigDir}`)
+  .then(res => res.json())
+  .then(data => {
+      const objDir = { bigDir, smallDir:data.result.short_link , copied: false};
+      arrayObjects.push(objDir);
+      this.reset();
+      linkCards.innerHTML = arrayObjects.map((card, i)=>{
+        return `
+            <li>
+              <section>
+                  <span>${card.bigDir}</span>
+                  <form class="smallDir-form">
+                    <span >${card.smallDir}</span>
+                    <input type="submit" value= "Copy" >
+                  </form>
+              </section>
+            </li>
+        `}).join('');
+        localStorage.setItem("item",JSON.stringify(arrayObjects))
+  })
+    console.log(arrayObjects)
+} 
 
 const localCards = function(){
   linkCards.innerHTML = arrayObjects.map((card, i)=>{
@@ -70,15 +69,12 @@ window.addEventListener('load',localCards)
 
 linkCards.addEventListener('submit', copyLink)
 
-
 const movileMenuHandle = function(){
 
   if(menuMobile.classList.contains('burger-pressed')){
     menuMobile.classList.remove('burger-pressed')
   }
-  
   else {menuMobile.classList.add('burger-pressed')}
-
 }
 
 burgerIcon.addEventListener('click', movileMenuHandle)
