@@ -12,22 +12,22 @@ const requestCard = function(e){
    fetch(`https://api.shrtco.de/v2/shorten?url=${bigDir}`)
   .then(res => res.json())
   .then(data => {
-      const objDir = { bigDir, smallDir:data.result.short_link , copied: false};
-      arrayObjects.push(objDir);
-      this.reset();
-      linkCards.innerHTML = arrayObjects.map((card, i)=>{
-        return `
-            <li>
-              <section>
-                  <span>${card.bigDir}</span>
-                  <form class="smallDir-form">
-                    <span >${card.smallDir}</span>
-                    <input type="submit" value= "Copy" >
-                  </form>
-              </section>
-            </li>
-        `}).join('');
-        localStorage.setItem("item",JSON.stringify(arrayObjects))
+    const objDir = { bigDir, smallDir:data.result.short_link , copied: false};
+    arrayObjects.push(objDir);
+    this.reset();
+    linkCards.innerHTML = arrayObjects.map((card, i)=>{
+      return `
+        <li>
+          <section>
+            <span>${card.bigDir}</span>
+            <form class="smallDir-form">
+              <span >${card.smallDir}</span>
+              <input type="submit" value= "Copy" >
+            </form>
+          </section>
+        </li>
+      `}).join('');
+    localStorage.setItem("item",JSON.stringify(arrayObjects))
   })
     console.log(arrayObjects)
 } 
@@ -35,15 +35,15 @@ const requestCard = function(e){
 const localCards = function(){
   linkCards.innerHTML = arrayObjects.map((card, i)=>{
     return `
-        <li>
-          <section>
-              <span>${card.bigDir}</span>
-              <form class="smallDir-form">                             
-                <span class="span-dir">${card.smallDir}</span>
-                <input type="submit" value= "Copy" >
-              </form>
-          </section>
-        </li>
+      <li>
+        <section>
+          <span>${card.bigDir}</span>
+          <form class="smallDir-form">                             
+            <span class="span-dir">${card.smallDir}</span>
+            <input type="submit" value= "Copy" >
+          </form>
+        </section>
+      </li>
     `}).join('');
 }
 
